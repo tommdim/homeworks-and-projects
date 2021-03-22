@@ -1,0 +1,24 @@
+Soooooo it's the last pseudo-code huh?
+I will be as concise as possible since you are probably not enjoying reading what 
+I wrote :)
+The first function I defined is used to clean the input removing the lines with
+'#' and by splitting each instruction in four words by replacing the lower 
+letters with spaces and putting them in a list.
+
+At this point I create a dictionary (if there are instructions, otherwise I return
+an empty set) that maps to every couple of city-clue the respective
+couples of city-secret.
+
+Now everything is set to start looking for secrets, I evaluate before-hand 
+the len of the clues to avoid evaluating at every call of the function.
+
+So the recursion starts with the base case that checks if the index equals to the length
+of the list of the clues, if so I return a set with a tuple (secret.strip(), city). Then for every instruction in the values of that specific city,
+secret; I update a the string of the secret and then I update the total set calling
+the recursion again.
+Then I simply return the total set
+
+Hope this was in any way useful!
+Have a good day!! :))
+ 
+ 

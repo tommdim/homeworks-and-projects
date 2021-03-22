@@ -1,0 +1,27 @@
+Here we are to the second pseudo code. Hope this will be clearer than the previous one. :)
+[1] Translation of the verses
+    Firstly I initialized a function to reduce the verses in order for them to respect the isalpha()
+    conditions and also in lowercase using translate, then I left out all the '\n' and I used them to create the list
+    of verses.
+
+[2] Determine length of the verses
+    Now to calculate the lengths of the sound elements i translated the verse (into Vs for vowels and Cs for consonants,
+    at this point I divided the list so that the len of the list was the len of the verse and created a list of lengths.
+
+[3] List the final sound element of each verse
+    To list the final SE i used the translated verse to find the last vowel followed by a consonant and then I added
+    all the elements into a list.
+
+[4] Calculate the prosody
+    To calculate the prosody I zipped the lists of the lengths and of the finals, then I iterated through the list of 
+    the zipped list (without repetitions) to create a dictionary that has the length and the final SE zipped and as a value
+    the number that is associated to the pair in prosody, then with a list comprehension I iterated through the zipped list(with repetitions)
+    and added the respective prosodic value from the dictionary.
+
+[5] Calculate the period
+    Initially I calculated the possible divisors of the length of the prosody, (ranging to the sqrt of the length and taking them in couples)
+    then I iterated through the divisors and for every divisor I sliced the prosody from 0 to the divisor and then I iterated in the range 
+    of the length of the prosody to compare each sliced list to the first one.
+    If they fitted all the conditions I returned the divisor.
+
+That's all! Hope this was clear and useful! Have a nice day:))

@@ -1,0 +1,47 @@
+Hello there!
+I hope that my description of my program will be clear, I will try to keep it
+as concise as possible but I will also try to be thorough.
+
+(1) class Rectangle:
+    So after importing images I defined the class Rectangle that is initialized with 
+    p1 and p2 that are respectively the top left and the bottom right corners, with the color
+    of the sides of the rectangle.
+    I used this class to evaluate the width, the height, xmax, ymax, xmin, ymin (of each rectangle),
+    and the intersections.
+    def intersections(self):
+        so in order  to calculate the intersections I iterated through the perimeter (every coordinate 
+        of a given rectangle) and checked if the coordinate was of a different color.
+        So this method returns a list of the colors of all the rectangles that intersect that given rectangle.
+        
+(2) Calculating the vertices, obtaining a list of rectangles
+    The very first step to calculate the vertices is to calculate all the different colours
+    present in the image. (I simply iterated to a setted version of the matrix and stored the colors in a set)
+    To create the list of rectangles I iterate through the colours list and for each colour I create a rectangle
+    with the vertices (found the y checking the first occurence in the rows and the x with index for the topleft and with
+    and with index of the reversed list for the bottom right).
+    
+(3) Calculating the order of the rectangles
+    So this is probably the trickiest part, but luckily the intersections are already a method of the class.
+    So with a dictionary comprehension I created a dictionary with the rectangles as keys and all the list of colours that
+    were overlapping the rectangle.
+    So as you probably already know the only rectangle without any overlappings has a empty list as a value in the dictionary.
+    I initialized an empty dictionary where my future order will be stored
+    So at this point I iterated through every key in the dictionary and checked if the value was an empty list.
+        If so I created a key and assigned a casual value, we will only need the keys (the casual value was obviously a "§")
+        and removed the color of the rectangle that was assigned in the dictionary
+    The loop ends when the len of the dictionary is the same as the list of the rectangles, I return a list(reversed(dizionario coi §))
+
+(4) Encoding the image:
+    To encode the image I initialized an empty list then I iterated trough the ordered rectangles
+    at this point converting coordinates of the topleft corner are simply obtained with rect.p1, same 
+    as the width, height and colour, at this point converting the numbers is trivial and so our encoded
+    image is ready.
+    
+(5) Bounding box:
+    Now to find xmin, ymin, xmax, ymax, I store all the xins, ymins, xmaxs, ymaxs in 4 lists
+    and return a tuple with the min or max (depending on what we need(min for mins and max for maxs)) of the lists.
+    
+
+So this homework finishes with me saving the encoded image and returning the boundingbox.
+Thank you for your patience I probably wasn't concise but I hope that I was clear at least :))
+Have a good day!!

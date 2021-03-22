@@ -1,0 +1,22 @@
+My code is divided in three functions:
+the first one (score(g)) is used to calculate the score of each player using a
+dictionary to calculate the different points given for each letter and to sum
+the elements of a list that counted how many times the letters appeared and 
+multiplied this value to the value (points) mapped to the letter.
+
+Then I defined the second function (score_players(g)) that maps the previous 
+function (score) to the string of all of the words (joined) used by a player
+and returns the list of the scores of the four players without considering 
+the three points for each tile that remains unplayed.
+
+Finally in the main function ex1 I initialized two new lists: one for the hands
+and one for the players. Then I defined the player with maximum number of turns, 
+that is equal to the length of g1.
+Then I subtracted from num_letters dim_hand * 4.
+Then I iterated through the range num_turn, and I iterated 
+through the players, I reduced num letters by the length of the word if the number 
+of letters was greater than the length of the word otherwise I reduced the hand by
+the length of the word and then i added num_letters afterwards num_letters was set to 0
+and if the hand was equal to zero the loop would break.
+When the loops breaks I reduced the scores of the second function by the remaining 
+letters of each hand times three and then i returned the final score list.
